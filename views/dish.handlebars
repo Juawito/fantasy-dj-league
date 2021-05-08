@@ -1,0 +1,20 @@
+<div class="artist-card">
+  <div class="artist-card-header">
+    {{artist}}
+  </div>
+  <div class="card-body">
+    <p>
+      Description:
+      {{artist}}
+    </p>
+    <p>
+      Guest:
+      {{track}}
+    </p>
+    {{#if has_nuts}}
+      <p class="has-nuts">
+        Contains Nuts
+      </p>
+    {{/if}}
+  </div>
+</div>
