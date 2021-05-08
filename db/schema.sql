@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS fantasy_dj_DB;
+
+CREATE DATABASE fantasy_dj_DB;
