@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS fantasy_dj_DB;
+DROP DATABASE IF EXISTS artist_db;
 
-CREATE DATABASE fantasy_dj_DB;
+CREATE DATABASE artist_db;
