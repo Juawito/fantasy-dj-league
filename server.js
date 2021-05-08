@@ -14,14 +14,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public/')));
 
-// server will not completely start because it has no routes to listen out for.
-// Will start but will crash.
-// Awaiting routes to be created in controller file
-app.use(routes);
+app.use(require('./controllers/artist-routes'));
 
-sequelize.sync({ force: false}).then(() => {
-    app.listen(PORT, () => console.log(`Now Listening on PORT: ${PORT}`));
-})
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
