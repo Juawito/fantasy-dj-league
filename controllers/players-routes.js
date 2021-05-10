@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     // We use map() to iterate over playerData and then add .get({ plain: true }) each object to serialize it. 
     const players = playerData.map((player) => player.get({ plain: true }));
     // We render the template, 'all', passing in players, a new array of serialized objects.
-    res.render('all', { players });
+    res.render('homepage', { players });
     });
 // route to get one player
 router.get('/player/:id', async (req, res) => {

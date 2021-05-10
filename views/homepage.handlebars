@@ -3,25 +3,19 @@
     <h2>
       YOUR DREAM TEAM
     </h2>
-    <br>
   </div>
-  {{#each artists as |artist|}}
-      <div class="col-md-12">
+  {{#each players as |player|}}
+    <div class="player col-md-5">
       <p>
-        {{artist.id}}.
-        {{artist.track}}
+        {{player.id}}.
+        {{player.track}}
       </p>
-
     </div>
-    <div class="artist col-md-12">
+    <div class="col-md-7">
       <p>
        
-       
-       by: {{artist.artist}}
+        by: {{player.artist}}
       </p>
-      <br>
-      <br>
     </div>
-
   {{/each}}
 </div>
