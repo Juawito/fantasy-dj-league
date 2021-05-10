@@ -1,0 +1,101 @@
+[
+  {
+    "artist": "GOJIRA",
+    "track": "THE ART OF DYING",
+    "album": "THE WAY OF ALL FLESH",
+    "playlistId": 1
+  },
+  {
+    "artist": "CRAFT",
+    "track":
+      "QUEEN REAPER",
+    "album": "FUCK THE UNIVERSE",
+    "playlistId":1
+  },
+  {
+    "artist": "DISSECTION",
+    "track":
+      "STARLESS AEON",
+    "album": "Carlos",
+    "playlistId": 1
+  },
+  {
+    "artist": "NILE",
+    "track": "USER MAAT RE",
+    "album": "ANNIHILATION OF THE WICKED",
+    "playlistId": 2
+  },
+  {
+    "artist": "GOJIRA",
+    "track": "THE ART OF DYING",
+    "album": "THE WAY OF ALL FLESH",
+    "playlistId": 2
+  },
+  {
+    "artist": "THE EAGLES",
+    "track": "TEQUILA SUNRISE",
+    "album": "BEST OF",
+    "playlistId": 2
+  },
+  {
+    "artist": "LED ZEPPELIN",
+    "track": "STAIRWAY TO HEAVEN",
+    "album": "4",
+    "playlistId": 2
+  },
+  {
+    "artist": "DRAKE",
+    "track": "CONTROLLA",
+    "album": "VIEWS",
+    "playlistId": 1
+  },
+  {
+    "artist": "DRAKE",
+    "track": "SCORPION",
+    "album": "VIEWS",
+    "playlistId": 1
+  },
+  
+  {
+    "artist": "DRAKE",
+    "track": "ONE DANCE",
+    "album": "VIEWS",
+    "playlistId": 1
+  },
+  {
+    "artist": "AIMEE MANN",
+    "track": "ROLLER COASTERS",
+    "album": "MENTAL ILLNESS",
+    "playlistId": 1
+  },
+  {
+    "artist": "AIMEE MANN",
+    "track": "STUCK IN THE PAST",
+    "album": "MENTAL ILLNESS",
+    "playlistId": 1
+  },  {
+    "artist": "AIMEE MANN",
+    "track": "PHILLY SINKS",
+    "album": "MENTAL ILLNESS",
+    "playlistId": 1
+  },  {
+    "artist": "AIMEE MANN",
+    "track": "GOOSE SNOW CONE",
+    "album": "MENTAL ILLNESS",
+    "playlistId": 1
+  },
+  {
+    "artist": "DISSECTION",
+    "track": "STARLESS AEON",
+    "album": "Carlos",
+    "playlistId": 1
+  },
+  {
+    "artist": "NILE",
+    "track": "USER MAAT RE",
+    "album": "ANNIHILATION OF THE WICKED",
+    "playlistId": 1
+  }
+]
+
+
