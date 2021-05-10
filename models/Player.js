@@ -23,11 +23,9 @@ Player.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    null: {
-      type: DataTypes.BOOLEAN,
-    },
     playlistId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       refrences: {
         model: 'playlist',
         key: 'id'

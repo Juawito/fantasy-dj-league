@@ -1,0 +1,21 @@
+<div class="menu-container">
+  <div class="card-header col-md-10">
+    <h2>
+      YOUR DREAM TEAM
+    </h2>
+  </div>
+  {{#each players as |player|}}
+    <div class="player col-md-5">
+      <p>
+        {{player.id}}.
+        {{player.track}}
+      </p>
+    </div>
+    <div class="col-md-7">
+      <p>
+       
+        by: {{player.artist}}
+      </p>
+    </div>
+  {{/each}}
+</div>

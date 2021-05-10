@@ -14,15 +14,15 @@ Playlist.init(
         playlistName: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [30]
-            }
+            // validate: {
+            //     len: [30]
+            // }
         },
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: ' user',
+                model: 'user',
                 key: 'id'
             }
         },
