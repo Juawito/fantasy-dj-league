@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Info</title>
+</head>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome, "DJ Name Here", to the Fantasy DJ Leage!</h1>
+        <p>You're almost ready to rock the crowd. </p>
+    </div>
+</div>
+
+<body>
+
+    <form action="action_page.php" style="border:1px solid #ccc">
+        <div class="container">
+            <h1>DJ Onesheet</h1>
+            <p>Fill in this form to let us know about yourself & your DJ style!</p>
+            
+            <div>
+                <label for="img">Select image:</label>
+                <input type="file" id="img" name="img" accept="image/*">
+                <input type="submit">
+            </div>
+
+            <div>
+            <label for="bio"><b>BIO:</b></label>
+            <textarea id="bio" name="bio" rows="4" cols="50">
+                Tell us where you're from, why you love music, etc...
+                </textarea>
+            </div>
+            <div>
+                <label for="genre"><b>Favorite Genre(s):</b></label>
+                <textarea id="genre" name="genre" rows="2" cols="50">
+                Tell us about one or two of your favorite genres of music to spin...
+                </textarea>
+            </div>
+
+            <div>
+                <label for="Artist"><b>Favorite Artist:</b></label>
+                <input type="artist" placeholder= "" name="psw-repeat" required>
+            </div>
+            <p> Now, choose your playlist of 11 songs:</p>
+        </div>
+    </form>
+
+</body>
+
+<footer>
+    <div class="clearfix">
+        <button type="submit" class="nextBtn">Submit Onesheet</button>
+    </div>
+</footer>
+</html>
