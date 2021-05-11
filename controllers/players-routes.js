@@ -12,6 +12,11 @@ router.get('/', async (req, res) => {
     res.render('homepage', { players });
     });
 // route to get one player
+
+// user = User.find( where user.username = 
+// let currentUserId = user.id);
+
+// playlist = PLaylsit.find(where userId = currentUserId);
 router.get('/player/:id', async (req, res) => {
   try{ 
       const playerData = await Player.findByPk(req.params.id);

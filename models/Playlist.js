@@ -14,6 +14,7 @@ Playlist.init(
         playlistName: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
             // validate: {
             //     len: [30]
             // }
@@ -26,6 +27,11 @@ Playlist.init(
                 key: 'id'
             }
         },
+        count: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
+        }
     },
     {
         sequelize,

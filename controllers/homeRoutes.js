@@ -17,6 +17,7 @@ router.get('login', async (req, res) => {
 //             }
 //         })
 //         const topPlaylists = await Playlist.findAll();
+// const userPlaylist = await Playlist
         
 
 //         res.render('userHome', { userData , topTwo});
