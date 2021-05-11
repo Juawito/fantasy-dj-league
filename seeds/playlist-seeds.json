@@ -1,10 +1,12 @@
 [
     {
         "playlistName": "Testing Name",
-        "userId": 3
+        "userId": 3,
+        "count": 0
     },
     {
         "playlistName": "Testing User 2",
-        "userId": 2
+        "userId": 2,
+        "count": 20
     }
 ]
