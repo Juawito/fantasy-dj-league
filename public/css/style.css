@@ -2,7 +2,7 @@
     --primary: #389393;
     --secondary: #f5a25d;
     --tertiary: #fa7f72;
-    --quatrinary: #6c6b67;
+    --quatrinary: #D8E8E8;
     --light: #ebebeb;
     --dark: #182c23;
     --error: rgb(228, 46, 1);
@@ -41,11 +41,22 @@
     color: var(--light);
   }
   
-  nav {
-    display: flex;
-    background-color: var(--secondary);
+  .custom-nav {
+    background-color: var(--primary);
   }
-  
+  .sign-up-button {
+    background-color: black;
+    color: blue
+    border
+  }
+  .sign-in-button {
+    background-color: whitesmoke;
+    color: black;
+  }
+  /* .logo-tag{
+    color: black
+  } */
+/*   
   .menu-container {
     display: flex;
     flex-wrap: wrap;
@@ -99,7 +110,7 @@
   }
   
   /* CARDS */
-  .dish-card {
+  /* .dish-card {
     margin: 20px;
     flex: 0 1 300px;
     padding: 5px;
@@ -157,10 +168,10 @@
   }
   
   /* LAYOUT */
-  .container {
+  /* .container {
     display: flex;
     flex-flow: column wrap;
     align-content: flex-start;
     align-items: center;
   }
-  
+   /* */
