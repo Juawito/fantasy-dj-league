@@ -1,3 +1,11 @@
+<ul>
+  {{#forEach players as ||player}}
+  
+</ul>
+
+
+
+
 <div class="artist-card">
   <div class="artist-card-header">
     {{artist}}
@@ -5,11 +13,11 @@
   <div class="card-body">
     <p>
       Description:
-      {{artist}}
+      {{player.artist}}
     </p>
     <p>
       Guest:
-      {{track}}
+      {{player.track}}
     </p>
     {{#if has_nuts}}
       <p class="has-nuts">
