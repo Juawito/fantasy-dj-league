@@ -2,28 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <title>Document</title>
+  <title>userpage</title>
 </head>
-    <nav class= "custom-nav">
-        <div class="nav-wrapper teal lighten-5">
-          <a href="#!" class="brand-logo cyan accent-1 black-text">Logo</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a class="waves-effect  cyan accent-1 btn btn-large sign-in-button">Sign In</a></li>
-            <li><a class="waves-effect cyan darken-4 btn btn-large sign-up-button ">Sign Up</a></li>
-          </ul>
-        </div>
-      </nav>
+<nav class="custom-nav">
+  <div class="nav-wrapper teal lighten-5">
+    <a href="#!" class="brand-logo cyan accent-1 black-text">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a class="waves-effect  cyan accent-1 btn btn-large sign-in-button">Sign In</a></li>
+      <li><a class="waves-effect cyan darken-4 btn btn-large sign-up-button ">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
 
 
 <body>
 
-    <form action="action_page.php" style="border:1px solid #ccc">
+  <!-- <form action="action_page.php" style="border:1px solid #ccc">
         <div class="container">
             <h1>DJ Onesheet</h1>
             <p>Fill in this form to let us know about yourself & your DJ style!</p>
@@ -53,14 +53,47 @@
             </div>
             <p> Now, choose your playlist of 11 songs:</p>
         </div>
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </form> -->
+    <div class="user-content">
+  <aside class= " top-playlist-container">
+    <div class="card-container user-info">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator " src="https://i.pravatar.cc/400">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">John Doe<i
+              class="material-icons right">Open</i></span>
+          <p>Playlist Name <i>&#x1F3C6</i> </p>
+          <p> Count: 120</p>
+
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">John's playlist<i class="material-icons right">&#127926
+              close</i></span>
+          <ul>
+            <li>
+              <p>Track: Interlude</p>
+              <p>Artist: J.cole</p>
+              <p>Album: New Album</p>
+              <p>Listen Now: youtube.com/watchvideo</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 
 <footer>
-    <div class="clearfix">
+  <!-- <div class="clearfix">
         <button type="submit" class="nextBtn">Submit Onesheet</button>
-    </div>
+    </div> -->
 </footer>
+
 </html>

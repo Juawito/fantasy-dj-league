@@ -17,25 +17,16 @@ User.init(
         autoIncrement: true,
     },
     firstName: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(30),
         allowNull: false,
-        validate: {
-            len: [30]
-        }
     },
     lastName: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(30),
         allowNull: false,
-        validate: {
-            len: [30]
-        }
     },
     password: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: false,
-        validate: {
-            len: [100]
-        }
     },
     email: {
         type: DataTypes.STRING,
@@ -46,12 +37,9 @@ User.init(
         }
     },
     userName: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(10),
         allowNull: false,
         unique: true,
-        validate: {
-            len: [10]
-        }
     },
 },
 {
