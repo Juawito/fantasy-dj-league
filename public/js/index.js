@@ -1,19 +1,17 @@
-const axios = require('axios').default;
-
 const signUpNav = document.querySelector("#signUpNav");
 const signInNav = document.querySelector("#signInNav");
 const logOffNav = document.querySelector("#logOffNav");
-const userPageNav = document.querySelector("#userPageNav");
+const homeButton = document.querySelector("#userPageNav");
 const playoffsNav = document.querySelector("#playoffsNav");
 const like = document.querySelector("#like");
 function signUpNavF() {
-    console.log("singup click");
+        document.location.replace('/signup');
 }
 function signInNavF() {
-    console.log("in click");
+    document.location.replace('/login');
 }
 const logOffNavF = async () => {
-    const response = await axios({
+    const response = await fetch({
         method: 'post',
         url: '/api/user/logout',
         headers: { 'Content-Type': 'application/json' },
@@ -25,10 +23,15 @@ const logOffNavF = async () => {
     }
     console.log("off click");
 }
-function userPageNavF() {
+function backToHome() {
+    document.location.replace('/');
     console.log("user click");
 }
-function playoffsNavF() {
+async function playoffsNavF(){
+    const response = await fetch({
+        method: 'get',
+
+    })
     console.log("playoff click");
 }
 function likeF() {
@@ -37,6 +40,6 @@ function likeF() {
 signUpNav.addEventListener("click", signUpNavF);
 signInNav.addEventListener("click", signInNavF);
 logOffNav.addEventListener("click", logOffNavF);
-userPageNav.addEventListener("click", userPageNavF);
+homeButton.addEventListener("click", backToHome);
 playoffsNav.addEventListener("click", playoffsNavF);
-like.addEventListener("click", likeF);
+// like.addEventListener("click", likeF);

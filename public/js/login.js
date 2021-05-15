@@ -1,4 +1,3 @@
-const axios = require('axios').default;
 
 const signInBtn = document.querySelector('.signInBtn');
 const cancelBtn = document.querySelector('.cancelbtn');
@@ -9,14 +8,14 @@ const loginFormHandler = async (event) => {
     const username = document.querySelector('.username-login').value.trim();
     const password = document.querySelector('.password-login').value.trim();
     if (username && password) {
-        const response = await axios({
-            method: 'post',
-            url: '/api/user/login',
-            body: JSON.stringify({ username, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+        const response = await fetch('/api/user/login',
+            {
+                method: 'post',
+                body: JSON.stringify({ username, password }),
+                headers: { 'Content-Type': 'application/json' },
+            });
 
-        if (response.statusText === 'ok') {
+        if (response.ok) {
             document.location.replace('/profile');
         } else {
             alert(response.statusText)
@@ -31,27 +30,28 @@ const signupFormHandler = async (event) => {
     const newUserPassword = document.querySelector('#new-userPass').value.trim();
     const repeatedPassword = document.querySelector('#password-repeat').value.trim();
 
-    if(!newUserPassword === repeatedPassword) {
+    if (!newUserPassword === repeatedPassword) {
         alert('Passwords do not match please try again');
         newUserPassword = '';
         newUserEmail = '';
         newUsername = '';
         repeatedPassword = '';
-    } else if ( newUsername && newUserEmail && newUserPassword) {
-        const response = await axios({
+    } else if (newUsername && newUserEmail && newUserPassword) {
+        const response = await fetch({
             method: 'post',
             url: '/api/user/add',
             body: JSON.stringify({ newUsername, newUserPassword, newUserEmail }),
             headers: { 'Content-Type': 'application/json' },
         });
-         if (response.statusText === 'ok') {
-             document.location.replace('/profile');
-         } else {
-             alert(response.statusText);
-         }
+        if (response.statusText === 'ok') {
+            document.location.replace('/profile');
+            console.log("logged in")
+        } else {
+            alert(response.statusText);
+        }
     }
 }
 
 
 signInBtn.addEventListener('submit', loginFormHandler);
-signUpBtn.addEventListener('submit', signupFormHandler);
+// signUpBtn.addEventListener('submit', signupFormHandler);
