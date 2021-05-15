@@ -1,19 +1,7 @@
 const router = require('express').Router();
 const {Playlist, User} = require('../../models');
 
-router.get('/all', async (req, res) => {
-    try {
-        const allPlaylists = await Playlist.findAll({
-            order: [
-                ['id', 'DESC']
-            ],
-            include: [{ model: User}]
-        })
-        res.json(allPlaylists);
-    } catch (error) {
-        res.status(500).json(error);
-    }
-})
+
 router.post('/add', async (req, res) => {
 try {
     const newPlaylist = await Playlist.create(req.body);
