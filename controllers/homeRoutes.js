@@ -1,86 +1,49 @@
 const router = require('express').Router();
 const { User, Playlist, Player } = require('../models');
 const withAuth = require('../utils/withAuth')
-const sequelize = require('../config/connection');
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'blackmag3',
-    database: 'fantasy_dj_db',
-  });
+
 router.get('/', async (req, res) => {
-    selectPlaylist()
-    async function selectPlaylist() {     
-        let [results2, metadata2] = await sequelize.query(`SELECT playlist_name, count, id FROM fantasy_dj_db.playlist ORDER BY count DESC LIMIT 2`);
-        // console.log(results2)
-        connection.end
-      
-        // these are the names of the playlists
-        let top1PlaylistName = results2[0].playlist_name;
-        let top2PlaylistName = results2[1].playlist_name;
-      
-        //these are the ids of the playlists, plug these into the next sql searches to bring up the players
-        let top1Playlist = results2[0].id;
-        let top2Playlist = results2[1].id;
-        // console.log(top1Playlist, top2Playlist)
-        // these sql searches pull up each player in playlists
-        let [top1Res, top1ResMetadata] = await sequelize.query(`SELECT id, artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${top1Playlist}";`);
-        console.log(top1Res)
-        // console.log(top1PlaylistName)
-        connection.end
-       
-
-      
-        let [top2Res, top2ResMetadata] = await sequelize.query(`SELECT artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${top2Playlist}";`);
-        console.log(top2Res)
-        // console.log(top2PlaylistName)
-       
-
-        connection.end
-        res.render('all', { top1Res, top2Res });
-
-        
-        
-      
-      
-      };
-    })
-
+    try {
+        const topPlaylist = await Playlist.findAll({
+            order: [
+                ['count', 'DESC']
+            ],
+            include: [{model: User}]
+        })
+        const topTwo = [topPlaylist[0], topPlaylist[1]];
+        // must add the handlebards to render page but route works
+        res.json({topTwo});
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
 router.get('/login', async (req, res) => {
     res.render('login');
 })
-router.get('/signup', async (req, res) => {
-    res.render('signUp');
-})
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findOne({
+        const userData = await User.findByPk({
             where: {
-                userName: req.body.username,
+                id: req.session.user_id
+            },
+            attributes: {
+                exclude: ['password']
             },
             include: [{ model: Playlist}],
         })
-        const userPlaylist = await Playlist.findAll({
+        const userPlaylist = await Playlist.findOne({
             where: {
                 userId: userData.playlist.userId
             },
             include: [{ model: Player}],
         });
-        if (userData.checkPassword(req.body.password)) {
-            res.json({userData, userPlaylist});
-        }
-        else {
-            res.json({ message: 'your username or password is incorrect' })
-        }
-        // res.render('userHome', { userData , topTwo});
+        res.render('userHome', { userData , userPlaylist});
     } catch (error) {
         if (error) throw error;
         res.status(500).json(error);
     }
 })
-router.get('/add', async (req, res) => {
+router.get('/all', withAuth, async (req, res) => {
     try {
         const allPlaylists = await Playlist.findAll({
             order: [
