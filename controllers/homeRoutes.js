@@ -8,36 +8,41 @@ router.get('/', async (req, res) => {
             order: [
                 ['count', 'DESC']
             ],
-            include: [{model: User}]
+            include: [{ model: User }]
         })
         const topTwo = [topPlaylist[0], topPlaylist[1]];
         // must add the handlebards to render page but route works
-        res.json({topTwo});
+        res.json({ topTwo });
     } catch (error) {
         res.status(500).json(error);
     }
 })
 router.get('/login', async (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/profile')
+    };
     res.render('login');
+})
+router.get('/signup', async (req, res) => {
+    res.render('signup');
 })
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk({
-            where: {
-                id: req.session.user_id
-            },
-            attributes: {
-                exclude: ['password']
-            },
-            include: [{ model: Playlist}],
-        })
+        const userData = await User.findByPk(req.session.user_id,
+            {
+                attributes: {
+                    exclude: ['password']
+                },
+                include: [{ model: Playlist }],
+            })
         const userPlaylist = await Playlist.findOne({
             where: {
                 userId: userData.playlist.userId
             },
-            include: [{ model: Player}],
+            include: [{ model: Player }],
         });
-        res.render('userHome', { userData , userPlaylist});
+        // res.json({userData,userPlaylist});
+        res.render('all', { userData , userPlaylist});
     } catch (error) {
         if (error) throw error;
         res.status(500).json(error);
@@ -49,7 +54,7 @@ router.get('/all', withAuth, async (req, res) => {
             order: [
                 ['id', 'DESC']
             ],
-            include: [{ model: User}]
+            include: [{ model: User }]
         })
         res.json(allPlaylists);
     } catch (error) {

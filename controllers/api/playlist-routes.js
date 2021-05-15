@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Playlist, User } = require('../../models');
 const withAuth = require('../../utils/withAuth');
-const addCount = require('../../utils/addCount');
 const sequelize = require('../../config/connection');
 
 router.post('/add', async (req, res) => {
