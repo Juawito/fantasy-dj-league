@@ -1,12 +1,22 @@
 [
     {
-        "playlistName": "Testing Name",
-        "userId": 3,
-        "count": 0
+        "playlistName": "METAL",
+        "userId": 1,
+        "count": 16
     },
     {
-        "playlistName": "Testing User 2",
+        "playlistName": "Buzzy Ambient",
         "userId": 2,
-        "count": 20
+        "count": 17
+    },
+    {
+        "playlistName": "Joy",
+        "userId": 3,
+        "count": 14
+    },
+    {
+        "playlistName": "Golden Age of Singing",
+        "userId": 4,
+        "count": 8
     }
 ]

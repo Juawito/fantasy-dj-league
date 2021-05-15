@@ -1,101 +1,268 @@
 [
   {
-    "artist": "GOJIRA",
-    "track": "THE ART OF DYING",
-    "album": "THE WAY OF ALL FLESH",
+    "artist": "Gojira",
+    "track": "The Art Of Dying",
+    "album": "The Way Of All Flesh",
     "playlistId": 1
   },
   {
-    "artist": "CRAFT",
+    "artist": "At The Gates",
+    "track": "The Chasm",
+    "album": "To Drink from the Night Itself",
+    "playlistId": 1
+  },{
+    "artist": "Metallica",
+    "track": "Master Of Puppets",
+    "album": "Master Of Puppets",
+    "playlistId": 1
+  },{
+    "artist": "Behemoth",
+    "track": "Shemaforash",
+    "album": "Evangelion",
+    "playlistId": 1
+  },{
+    "artist": "Rings Of Saturn",
+    "track": "Face Of A Wormhole",
+    "album": "Gidim",
+    "playlistId": 1
+  },{
+    "artist": "Immortal",
+    "track": "Tyrants",
+    "album": "Sons of Northern Darkness",
+    "playlistId": 1
+  },{
+    "artist": "High On Fire",
+    "track": "Rumors Of War",
+    "album": "Death Is this Communion",
+    "playlistId": 1
+  },{
+    "artist": "Craft",
+    "track": "Come Resonance Of Doom",
+    "album": "Void",
+    "playlistId": 1
+  },{
+    "artist": "The Faceless",
+    "track": "Ten Billion Years",
+    "album": "Autotheism",
+    "playlistId": 1
+  },
+  {
+    "artist": "Emperor",
     "track":
-      "QUEEN REAPER",
-    "album": "FUCK THE UNIVERSE",
+      "Empty",
+    "album": "Prometheus",
     "playlistId":1
   },
   {
-    "artist": "DISSECTION",
+    "artist": "Dissection",
     "track":
-      "STARLESS AEON",
-    "album": "Carlos",
-    "playlistId": 1
+      "Starless Aeon",
+    "album": "Reinkaos",
+    "playlistId":1
   },
-  {
-    "artist": "NILE",
-    "track": "USER MAAT RE",
-    "album": "ANNIHILATION OF THE WICKED",
-    "playlistId": 1
-  },
-  {
-    "artist": "GOJIRA",
-    "track": "THE ART OF DYING",
-    "album": "THE WAY OF ALL FLESH",
-    "playlistId": 1
-  },
-  {
-    "artist": "THE EAGLES",
-    "track": "TEQUILA SUNRISE",
-    "album": "BEST OF",
-    "playlistId": 2
-  },
-  {
-    "artist": "LED ZEPPELIN",
-    "track": "STAIRWAY TO HEAVEN",
-    "album": "4",
-    "playlistId": 2
-  },
-  {
-    "artist": "DRAKE",
-    "track": "CONTROLLA",
-    "album": "VIEWS",
-    "playlistId": 2
-  },
-  {
-    "artist": "DRAKE",
-    "track": "SCORPION",
-    "album": "VIEWS",
-    "playlistId": 2
-  },
+
+
+
+
   
+
   {
-    "artist": "DRAKE",
-    "track": "ONE DANCE",
-    "album": "VIEWS",
+    "artist": "Harold Budd",
+    "track": "Templar",
+    "album": "Perhaps",
     "playlistId": 2
   },
   {
-    "artist": "AIMEE MANN",
-    "track": "ROLLER COASTERS",
-    "album": "MENTAL ILLNESS",
+    "artist": "D.D.A.S.",
+    "track": "Blue Filter",
+    "album": "Blue Filter",
+    "playlistId": 2
+  },{
+    "artist": "Angus MacRae",
+    "track": "Holding Pattern",
+    "album": "Cry Wolf",
+    "playlistId": 2
+  },{
+    "artist": "Harold Budd",
+    "track": "Arabesque 2",
+    "album": "Avalon Sutra",
+    "playlistId": 2
+  },{
+    "artist": "W.V.S.",
+    "track": "All Farewells Are Sudden",
+    "album": "All Farewells Are Sudden",
+    "playlistId": 2
+  },{
+    "artist": "D.D.A.S.",
+    "track": "The Desert Beckons",
+    "album": "Wow And Flutter",
+    "playlistId": 2
+  },{
+    "artist": "Satorio",
+    "track": "The Singing Bowl",
+    "album": "The Singing Bowl",
+    "playlistId": 2
+  },{
+    "artist": "Erik Reno",
+    "track": "NYC/Night Time",
+    "album": "Erik Reno",
+    "playlistId": 2
+  },{
+    
+    "artist": "Kelpe",
+    "track": "Tomato Day",
+    "album": "Autotheism",
     "playlistId": 2
   },
   {
-    "artist": "AIMEE MANN",
-    "track": "STUCK IN THE PAST",
-    "album": "MENTAL ILLNESS",
+    "artist": "Jefre Cantu-Ledesma",
+    "track": "Joy",
+    "album": "Joy",
     "playlistId": 2
-  },  {
-    "artist": "AIMEE MANN",
-    "track": "PHILLY SINKS",
-    "album": "MENTAL ILLNESS",
-    "playlistId": 2
-  },  {
-    "artist": "AIMEE MANN",
-    "track": "GOOSE SNOW CONE",
-    "album": "MENTAL ILLNESS",
-    "playlistId": 2
+    
   },
   {
-    "artist": "DISSECTION",
-    "track": "STARLESS AEON",
-    "album": "Carlos",
+    "artist": "Lotte",
+    "track": "Triptich I + II",
+    "album": "Joy",
     "playlistId": 2
+    
+  },
+
+
+
+
+
+
+  {
+    "artist": "Bing & Ruth",
+    "track": "Starwood Choker",
+    "album": "Starwood",
+    "playlistId": 3
   },
   {
-    "artist": "NILE",
-    "track": "USER MAAT RE",
-    "album": "ANNIHILATION OF THE WICKED",
-    "playlistId": 2
+    "artist": "Peter Broderick",
+    "track": "Eyes Closed And Traveling",
+    "album": "Eyes Closed And Traveling",
+    "playlistId": 3
+  },{
+    "artist": "Eluvium",
+    "track": "Caroling",
+    "album": "Caroling",
+    "playlistId": 3
+  },{
+    "artist": "Dustin O’Halloran",
+    "track": "Opus 20",
+    "album": "Opus 20",
+    "playlistId": 3
+  },{
+    "artist": "Eluvium",
+    "track": "Entendre",
+    "album": "Caroling",
+    "playlistId": 3
+  },{
+    "artist": "Bonobo",
+    "track": "Second Sun",
+    "album": "Linked",
+    "playlistId": 3
+  },{
+    "artist": "White Rainbow",
+    "track": "Warm Clicked Fruit",
+    "album": "Eternal Now",
+    "playlistId": 3
+  },{
+    "artist": "Olafur Arnalds",
+    "track": "Loom",
+    "album": "Loom",
+    "playlistId": 3
+  },{
+    "artist": "Gravenhurst",
+    "track": "Islands",
+    "album": "Autotheism",
+    "playlistId": 3
+  },
+  {
+    "artist": "Dustin O’Halloran",
+    "track": "An Ending, A Beginning",
+    "album": "An Ending, A Beginning",
+    "playlistId": 3
+    
+  },
+  {
+    "artist": "Bonobo",
+    "track": "Linked",
+    "album": "Linked",
+    "playlistId": 3
+    
+  },
+
+
+
+
+
+
+
+
+  {
+    "artist": "Voces 8",
+    "track": "Song for Athene",
+    "album": "Tenebrae",
+    "playlistId": 4
+  },
+  {
+    "artist": "Voces 8",
+    "track": "Ne Irascaris Domine",
+    "album": "",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "Civitas Sancti Tui",
+    "album": "Cry Wolf",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "Miserere",
+    "album": "Avalon Sutra",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "The Deer’s Cry",
+    "album": "",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "The Road Home",
+    "album": "Wow And Flutter",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "Vertue",
+    "album": "The Singing Bowl",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "The Lamb",
+    "album": "Erik Reno",
+    "playlistId": 4
+  },{
+    "artist": "Voces 8",
+    "track": "Hymn To The Cherubim",
+    "album": "Autotheism",
+    "playlistId": 4
+  },
+  {
+    "artist": "Voces 8",
+    "track": "The Spheres",
+    "album": "Joy",
+    "playlistId": 4
+    
+  },
+  {
+    "artist": "Voces 8",
+    "track": "Sanctus",
+    "album": "Joy",
+    "playlistId": 4
+    
   }
+  
 ]
-
-
