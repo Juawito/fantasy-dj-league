@@ -1,6 +1,3 @@
-// Handlebars.registerHelper("inc", function(value, options)
-// {
-//     return parseInt(value) + 1;
-// });
+const inc = (value) => {return parseInt(value) + 1};
 
-// module.exports = inc;
+ module.exports = inc;
