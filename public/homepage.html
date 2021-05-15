@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
     <nav class= "custom-nav">
         <div class="nav-wrapper teal lighten-5">
-          <a href="#!" class="brand-logo cyan accent-1 black-text">Logo</a>
+          <a href="#!" class="brand-logo cyan accent-1 black-text"></a>
           <ul class="right hide-on-med-and-down">
-            <li><a class="waves-effect  cyan accent-1 btn btn-large sign-in-button">Sign In</a></li>
-            <li><a class="waves-effect cyan darken-4 btn btn-large sign-up-button ">Sign Up</a></li>
+            <row>
+             <button id="signUpNav" class="btn">SIGN UP</button>
+             <button id="signInNav" class="btn">SIGN IN</button>
+              <button id="logOffNav" class="btn">LOG OFF</button>
+             <button id="userPageNav" class="btn">PERSONAL USER PAGE</button>
+              <button id="playoffsNav" class="btn">TOP PLAYOFFS</button>
+              </row>
           </ul>
         </div>
       </nav
+<body>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        WELCOME TO 
+        <br>
+        <br>
+        &#x1F3C6 THE FANTASY DJ LEAGUE! &#x1F3C6
+      </h1>
+    </header>
+      <main class="container container-fluid mt-5">
+        {{{ body }}}
+      </main>
+  </div>
+  <script src="../../public/js/index.js"></script>
+  </body>
+</html>
