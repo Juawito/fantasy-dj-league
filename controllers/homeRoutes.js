@@ -20,33 +20,30 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
     res.render('login');
 })
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findOne({
+        const userData = await User.findByPk({
             where: {
-                userName: req.body.username,
+                id: req.session.user_id
+            },
+            attributes: {
+                exclude: ['password']
             },
             include: [{ model: Playlist}],
         })
-        const userPlaylist = await Playlist.findAll({
+        const userPlaylist = await Playlist.findOne({
             where: {
                 userId: userData.playlist.userId
             },
             include: [{ model: Player}],
         });
-        if (userData.checkPassword(req.body.password)) {
-            res.json({userData, userPlaylist});
-        }
-        else {
-            res.json({ message: 'your username or password is incorrect' })
-        }
-        // res.render('userHome', { userData , topTwo});
+        res.render('userHome', { userData , userPlaylist});
     } catch (error) {
         if (error) throw error;
         res.status(500).json(error);
     }
 })
-router.get('/add', async (req, res) => {
+router.get('/all', withAuth, async (req, res) => {
     try {
         const allPlaylists = await Playlist.findAll({
             order: [
