@@ -4,7 +4,14 @@
     <div class="column" style="widthbackground-color:#aaa;">
       <h4>FANTASY TEAM 1</h4>
       <button id="like" class="btn">Vote for this Team</button>
+<<<<<<< HEAD
+       {{#each top1PlaylistName as |playlist|}}
+<p>{{playlist.playlistName}}</p>
+           {{/each}}
+      {{#each top1Res as |player|}}
+=======
       {{#each userdata as |player|}}
+>>>>>>> da57b0ab5aa046ec4f370c7bed6b9104303ea131
 
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
@@ -25,7 +32,7 @@
 
     <div class="card" style="width: 18rem;">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"> {{player.id}}.{{player.track}}</li>
+        <li class="list-group-item"> {{@index}}.{{player.track}}</li>
         <li class="list-group-item">by: {{player.artist}}</li>
       </ul>
     </div>

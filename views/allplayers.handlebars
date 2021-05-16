@@ -1,0 +1,79 @@
+ 
+
+  <div class="row">
+    <div class="column" style="widthbackground-color:#aaa;">
+      <h4>ALL FANTASY TEAMS</h4>
+      {{#each allPlaylists as |playlist|}}
+
+      <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> {{@index}}.{{playlist.playlist_name}}</li>
+          <li class="list-group-item"> Score: {{playlist.count}}</li>
+        </ul>
+      </div>
+      {{/each}}
+    </div>
+  
+   
+
+
+
+
+
+{{!--
+<div class="menu-container">
+  <div class="card-header col-md-10">
+    <h2>
+      YOUR DREAM TEAM
+    </h2>
+    <br>
+  </div>
+  {{#each players as |player|}}
+  <div class="col-md-5">
+    <p>
+      {{player.id}}.
+      {{player.track}}
+    </p>
+
+  </div>
+  <div class="player col-md-7">
+    <p>
+      by: {{player.artist}}
+    </p>
+    <br>
+    <br>
+  </div>
+
+  {{/each}}
+</div> --}}
+
+
+{{!-- <ul>
+  {{#forEach players as ||player}}
+
+</ul>
+
+
+
+
+<div class="artist-card">
+  <div class="artist-card-header">
+    {{artist}}
+  </div>
+  <div class="card-body">
+    <p>
+      Description:
+      {{player.artist}}
+    </p>
+    <p>
+      Guest:
+      {{player.track}}
+    </p>
+    {{#if has_nuts}}
+    <p class="has-nuts">
+      Contains Nuts
+    </p>
+    {{/if}}
+  </div>
+</div>
+--}}

@@ -11,7 +11,7 @@ Playlist.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        playlistName: {
+        playlist_name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true

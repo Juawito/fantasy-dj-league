@@ -14,13 +14,14 @@
 <nav class="custom-nav">
   <div class="nav-wrapper teal lighten-5">
     <a href="#!" class="brand-logo cyan accent-1 black-text"></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="center">
       <row>
         {{!-- {{#if loggedIn}} --}}
         <button id="logOffNav" class="btn">LOG OFF</button>
-        <button id="userPageNav" class="btn">Home</button>
+        <button id="userPageNav" class="btn">USER HOME</button>
         <button id="playoffsNav" class="btn">TOP PLAYOFFS</button>
         {{!-- {{else}} --}}
+        <button id="allPlaylists" class="btn">ALL PLAYLISTS</button>
         <button id="signUpNav" class="btn">SIGN UP</button>
         <button id="signInNav" class="btn">SIGN IN</button>
         {{!-- {{/if}} --}}
@@ -31,7 +32,7 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="">
       <h1>
         WELCOME TO
         <br>

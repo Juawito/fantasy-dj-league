@@ -4,8 +4,12 @@ const logOffNav = document.querySelector("#logOffNav");
 const homeButton = document.querySelector("#userPageNav");
 const playoffsNav = document.querySelector("#playoffsNav");
 const like = document.querySelector("#like");
-function signUpNavF(event) {
-    event.stopPropagation();
+const allPlaylistsBtn = document.querySelector("#allPlaylists");
+
+function allPlaylistsF() {
+    document.location.replace('/all');
+}
+function signUpNavF() {
         document.location.replace('/signup');
 }
 function signInNavF(event) {
@@ -25,17 +29,13 @@ const logOffNavF = async (event) => {
     }
     console.log("off click");
 }
-function backToHome(event) {
-    event.stopPropagation();
-    document.location.replace('/');
+function backToHome() {
+    document.location.replace('/profile');
     console.log("user click");
 }
-async function playoffsNavF(event){
-    event.stopPropagation();
-    const response = await fetch({
-        method: 'get',
-
-    })
+async function playoffsNavF(){
+    document.location.replace('/');
+    
     console.log("playoff click");
 }
 function likeF(event) {
@@ -43,6 +43,7 @@ function likeF(event) {
     console.log("like click");
 }
 
+allPlaylistsBtn.addEventListener("click", allPlaylistsF)
 signUpNav.addEventListener("click", signUpNavF);
 signInNav.addEventListener("click", signInNavF);
 logOffNav.addEventListener("click", logOffNavF);
