@@ -1,20 +1,20 @@
 
-
-const signInBtn = document.querySelector('.signInBtn');
-const cancelBtn = document.querySelector('.cancelbtn');
-const signUpBtn = document.querySelector('.signupbtn')
-
+// const signInBtn = document.querySelector('.signInBtn');
+// const cancelBtn = document.querySelector('.cancelbtn');
+// const signUpBtn = document.querySelector('.signupbtn')
+console.log('logged in');
 const loginFormHandler = async (event) => {
+    event.stopPropagation();    
     event.preventDefault();
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-    console.log(username, password)
+    console.log('logged in');
+    const username = document.querySelector('.username-login').value.trim();
+    const password = document.querySelector('.password-login').value.trim();
     if (username && password) {
         
 
         const response = await fetch('/api/user/login',
             {
-                method: 'post',
+                method: 'POST',
                 body: JSON.stringify({ username, password }),
                 headers: { 'Content-Type': 'application/json' },
             });
@@ -29,37 +29,34 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
-    const newUsername = document.querySelector('#new-username').value.trim();
-    const newUserEmail = document.querySelector('#new-userEmail').value.trim();
-    const newUserPassword = document.querySelector('#new-userPass').value.trim();
+    event.stopPropagation();
+    const firstName = document.querySelector('#firstName').value.trim();
+    const lastName = document.querySelector('#lastName').value.trim();
+    const userName = document.querySelector('#new-username').value.trim();
+    const email = document.querySelector('#new-userEmail').value.trim();
+    const password = document.querySelector('#new-userPass').value.trim();
     const repeatedPassword = document.querySelector('#password-repeat').value.trim();
 
-    if (!newUserPassword === repeatedPassword) {
+    if (!password === repeatedPassword) {
         alert('Passwords do not match please try again');
         newUserPassword = '';
         newUserEmail = '';
         newUsername = '';
         repeatedPassword = '';
-    } else if (newUsername && newUserEmail && newUserPassword) {
-        const response = await fetch({
-            method: 'post',
-            url: '/api/user/add',
-            body: JSON.stringify({ newUsername, newUserPassword, newUserEmail }),
+    } else if (firstName && lastName && userName && email && password) {
+        const response = await fetch('/api/user/add', {
+            method: 'POST',
+            body: JSON.stringify({ userName, email, password,firstName, lastName }),
             headers: { 'Content-Type': 'application/json' },
         });
-        if (response.statusText === 'ok') {
+        if (response.ok) {
             document.location.replace('/profile');
-            console.log("logged in")
+            alert('Succesfully created account')
         } else {
             alert(response.statusText);
         }
     }
 }
 
-
-
-  document.body.querySelector('.login-form')
-  document.body.addEventListener('submit', loginFormHandler);
-
-// signInBtn.addEventListener('click', loginFormHandler);
-// signUpBtn.addEventListener('submit', signupFormHandler);
+// document.querySelector('#loginForm').addEventListener('submit', loginFormHandler);
+document.querySelector('#signUp-form').addEventListener('submit', signupFormHandler);

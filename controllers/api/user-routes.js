@@ -3,6 +3,7 @@ const {Playlist, User} = require('../../models');
 
 router.post('/add', async (req, res) => {
     try {
+        console.log('trying to create a user')
         const userData = await User.create(req.body);
     
         req.session.save(() => {
