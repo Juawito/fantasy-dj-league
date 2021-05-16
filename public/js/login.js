@@ -1,13 +1,17 @@
 
+
 const signInBtn = document.querySelector('.signInBtn');
 const cancelBtn = document.querySelector('.cancelbtn');
 const signUpBtn = document.querySelector('.signupbtn')
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
-    const username = document.querySelector('.username-login').value.trim();
-    const password = document.querySelector('.password-login').value.trim();
+    const username = document.querySelector('#username-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+    console.log(username, password)
     if (username && password) {
+        
+
         const response = await fetch('/api/user/login',
             {
                 method: 'post',
@@ -53,5 +57,9 @@ const signupFormHandler = async (event) => {
 }
 
 
-signInBtn.addEventListener('submit', loginFormHandler);
+
+  document.body.querySelector('.login-form')
+  document.body.addEventListener('submit', loginFormHandler);
+
+// signInBtn.addEventListener('click', loginFormHandler);
 // signUpBtn.addEventListener('submit', signupFormHandler);
