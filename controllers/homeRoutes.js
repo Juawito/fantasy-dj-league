@@ -37,12 +37,14 @@ router.get('/profile', withAuth, async (req, res) => {
             })
         const userPlaylist = await Playlist.findOne({
             where: {
-                userId: userData.playlist.userId
+                userId: userData.id
             },
             include: [{ model: Player }],
         });
-        // res.json({userData,userPlaylist});
-        res.render('all', { userData , userPlaylist});
+        res.render('all', {
+            userData, userPlaylist,
+            logged_in: true
+        });
     } catch (error) {
         if (error) throw error;
         res.status(500).json(error);
