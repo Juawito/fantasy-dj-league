@@ -4,7 +4,7 @@
     <div class="column" style="widthbackground-color:#aaa;">
       <h4>FANTASY TEAM 1</h4>
       <button id="like" class="btn">Vote for this Team</button>
-      {{#each top1Res as |player|}}
+      {{#each userdata as |player|}}
 
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
@@ -21,7 +21,7 @@
     <div class="column" style="">
     <h2>FANTASY TEAM 2</h2>
 <button id="generate" class="btn">Vote for this Team</button>
-    {{#each top2Res as |player|}}
+    {{#each userPlaylist as |player|}}
 
     <div class="card" style="width: 18rem;">
       <ul class="list-group list-group-flush">

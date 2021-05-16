@@ -4,39 +4,45 @@ const logOffNav = document.querySelector("#logOffNav");
 const homeButton = document.querySelector("#userPageNav");
 const playoffsNav = document.querySelector("#playoffsNav");
 const like = document.querySelector("#like");
-function signUpNavF() {
+function signUpNavF(event) {
+    event.stopPropagation();
         document.location.replace('/signup');
 }
-function signInNavF() {
+function signInNavF(event) {
+    event.stopPropagation();
     document.location.replace('/login');
 }
-const logOffNavF = async () => {
-    const response = await fetch({
+const logOffNavF = async (event) => {
+    event.stopPropagation();
+    const response = await fetch('/api/user/logout', {
         method: 'post',
-        url: '/api/user/logout',
         headers: { 'Content-Type': 'application/json' },
     })
-    if (response.statusText === 'ok') {
+    if (response.ok) {
         document.location.replace('/');
     } else {
         alert(response.statusText);
     }
     console.log("off click");
 }
-function backToHome() {
+function backToHome(event) {
+    event.stopPropagation();
     document.location.replace('/');
     console.log("user click");
 }
-async function playoffsNavF(){
+async function playoffsNavF(event){
+    event.stopPropagation();
     const response = await fetch({
         method: 'get',
 
     })
     console.log("playoff click");
 }
-function likeF() {
+function likeF(event) {
+    event.stopPropagation();
     console.log("like click");
 }
+
 signUpNav.addEventListener("click", signUpNavF);
 signInNav.addEventListener("click", signInNavF);
 logOffNav.addEventListener("click", logOffNavF);
