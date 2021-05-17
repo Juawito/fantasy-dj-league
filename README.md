@@ -32,6 +32,6 @@ Front end user should be able to:
 3. Make a playlist [select a list of songs from our database]
 
 ## Directions for Future Development
-Create a more robust user interface with comments, direct messages, file sharing, etc
-Getting an API to populate photos of the artists.
-User view page needs to link to current user
+1.Create a more robust user interface with comments, direct messages, file sharing, etc
+2. Getting an API to populate photos of the artists.
+3. User view page needs to link to current user
