@@ -16,15 +16,17 @@
     <a href="#!" class="brand-logo cyan accent-1 black-text"></a>
     <ul class="center">
       <row>
-        {{!-- {{#if loggedIn}} --}}
+        {{#if loggedIn}}
         <button id="logOffNav" class="btn">LOG OFF</button>
         <button id="userPageNav" class="btn">USER HOME</button>
         <button id="playoffsNav" class="btn">TOP PLAYOFFS</button>
-        {{!-- {{else}} --}}
-        <button id="allPlaylists" class="btn">ALL PLAYLISTS</button>
+         <button id="allPlaylists" class="btn">ALL PLAYLISTS</button>
+        <script src="./js/index.js"></script>
+        {{else}}
         <button id="signUpNav" class="btn">SIGN UP</button>
         <button id="signInNav" class="btn">SIGN IN</button>
-        {{!-- {{/if}} --}}
+        <script src="./js/landing.js"></script>
+        {{/if}}
       </row>
     </ul>
   </div>
@@ -40,11 +42,34 @@
         &#x1F3C6 THE FANTASY DJ LEAGUE! &#x1F3C6
       </h1>
     </header>
-    <main class="container container-fluid mt-5">
       {{{ body }}}
-    </main>
   </div>
-    <script src="./js/index.js"></script>
+      <footer class="page-footer teal lighten-5">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="black-text">Footer Content</h5>
+              <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="black-text">Links</h5>
+              <ul>
+                <li><a class="black-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="black-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="black-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="black-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container black-text">
+          © 2014 Copyright Text
+          <a class="black-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+
 </body>
 
 </html>

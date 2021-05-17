@@ -1,5 +1,4 @@
-const signUpNav = document.querySelector("#signUpNav");
-const signInNav = document.querySelector("#signInNav");
+
 const logOffNav = document.querySelector("#logOffNav");
 const homeButton = document.querySelector("#userPageNav");
 const playoffsNav = document.querySelector("#playoffsNav");
@@ -8,13 +7,6 @@ const allPlaylistsBtn = document.querySelector("#allPlaylists");
 
 function allPlaylistsF() {
     document.location.replace('/all');
-}
-function signUpNavF() {
-        document.location.replace('/signup');
-}
-function signInNavF(event) {
-    event.stopPropagation();
-    document.location.replace('/login');
 }
 const logOffNavF = async (event) => {
     event.stopPropagation();
@@ -44,8 +36,6 @@ function likeF(event) {
 }
 
 allPlaylistsBtn.addEventListener("click", allPlaylistsF)
-signUpNav.addEventListener("click", signUpNavF);
-signInNav.addEventListener("click", signInNavF);
 logOffNav.addEventListener("click", logOffNavF);
 homeButton.addEventListener("click", backToHome);
 playoffsNav.addEventListener("click", playoffsNavF);
