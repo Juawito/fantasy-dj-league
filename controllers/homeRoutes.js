@@ -3,20 +3,20 @@ const { User, Playlist, Player } = require('../models');
 const withAuth = require('../utils/withAuth')
 const sequelize = require('../config/connection');
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'blackmag3',
-    database: 'fantasy_dj_db',
-  });
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     port: 3306,
+//     user: 'root',
+//     password: 'blackmag3',
+//     database: 'fantasy_dj_db',
+//   });
 
 router.get('/', async (req, res) => {
     selectPlaylist()
     async function selectPlaylist() {     
         let [results2, metadata2] = await sequelize.query(`SELECT playlist_name, count, id FROM fantasy_dj_db.playlist ORDER BY count DESC LIMIT 2`);
         // console.log(results2)
-        connection.end
+       
 
         // these are the names of the playlists
         let top1PlaylistName = results2[0];
@@ -30,7 +30,6 @@ router.get('/', async (req, res) => {
         let [top1Res, top1ResMetadata] = await sequelize.query(`SELECT id, artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${top1Playlist}";`);
         console.log(top1Res)
         // console.log(top1PlaylistName)
-        connection.end
 
 
 
@@ -39,7 +38,6 @@ router.get('/', async (req, res) => {
         // console.log(top2PlaylistName)
 
 
-        connection.end
         res.render('all', { top1Res, top2Res, top1PlaylistName, top2PlaylistName });
       };   
     // try {
@@ -63,7 +61,7 @@ router.get('/login', async (req, res) => {
         console.log(req.session.logged_in)
         res.redirect('/profile')
     };
-    res.json('login');
+    res.render('login');
     return
 })
 router.get('/signup', async (req, res) => {
@@ -104,7 +102,6 @@ router.get('/all', async (req, res) => {
     selectAllPlaylist()
     async function selectAllPlaylist() {     
         let [allPlaylists, metadata2] = await sequelize.query(`SELECT id, playlist_name, count  FROM fantasy_dj_db.playlist ORDER BY count DESC`);
-        connection.end
         console.log(allPlaylists)
    
    

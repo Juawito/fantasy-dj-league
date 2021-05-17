@@ -2,16 +2,12 @@
 // const signInBtn = document.querySelector('.signInBtn');
 // const cancelBtn = document.querySelector('.cancelbtn');
 // const signUpBtn = document.querySelector('.signupbtn')
-console.log('logged in');
 const loginFormHandler = async (event) => {
-    event.stopPropagation();    
+    event.stopPropagation();
     event.preventDefault();
-    console.log('logged in');
-    const username = document.querySelector('.username-login').value.trim();
-    const password = document.querySelector('.password-login').value.trim();
+    const username = document.querySelector('#username-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
     if (username && password) {
-        
-
         const response = await fetch('/api/user/login',
             {
                 method: 'POST',
@@ -46,7 +42,7 @@ const signupFormHandler = async (event) => {
     } else if (firstName && lastName && userName && email && password) {
         const response = await fetch('/api/user/add', {
             method: 'POST',
-            body: JSON.stringify({ userName, email, password,firstName, lastName }),
+            body: JSON.stringify({ userName, email, password, firstName, lastName }),
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
@@ -58,5 +54,5 @@ const signupFormHandler = async (event) => {
     }
 }
 
-// document.querySelector('#loginForm').addEventListener('submit', loginFormHandler);
-document.querySelector('#signUp-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#loginForm').addEventListener('submit', loginFormHandler);
+// document.querySelector('#signUp-form').addEventListener('submit', signupFormHandler);
