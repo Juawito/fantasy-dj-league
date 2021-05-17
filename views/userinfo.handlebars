@@ -14,9 +14,27 @@
 
         </div>
         <div class="card-reveal">
-           <span class="card-title grey-text text-darken-4">John's playlist<i class="material-icons right">&#127926
+          <span class="card-title grey-text text-darken-4">John's playlist<i class="material-icons right">&#127926
               close</i></span>
           {{#each userList as |player|}}
+
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> {{@index}}.{{player.track}}</li>
+              <li class="list-group-item">By: {{player.artist}}</li>
+            </ul>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="playlistContainer">
+    <div class="row">
+      <div class="column" style="widthbackground-color:#aaa;">
+        <h4>FANTASY TEAM 1</h4>
+        <button id="like" class="btn">Vote for this Team</button>
+        {{#each top1Res as |player|}}
 
         <div class="card" style="width: 18rem;">
           <ul class="list-group list-group-flush">
@@ -25,41 +43,26 @@
           </ul>
         </div>
         {{/each}}
+      </div>
+      <div class="column col-3" style="width: 18rem background-color:#aaa;">
+        <h2>VS</h2>
+
+      </div>
+      <div class="column" style="">
+        <h2>FANTASY TEAM 2</h2>
+        <button id="generate" class="btn">Vote for this Team</button>
+        {{#each top2Res as |player|}}
+
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> {{@index}}.{{player.track}}</li>
+            <li class="list-group-item">by: {{player.artist}}</li>
+          </ul>
         </div>
+        {{/each}}
       </div>
     </div>
-  </aside>
-    <div class="row">
-    <div class="column" style="widthbackground-color:#aaa;">
-      <h4>FANTASY TEAM 1</h4>
-      <button id="like" class="btn">Vote for this Team</button>
-      {{#each top1Res as |player|}}
-
-      <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"> {{@index}}.{{player.track}}</li>
-          <li class="list-group-item">By: {{player.artist}}</li>
-        </ul>
-      </div>
-      {{/each}}
-    </div>
-    <div class="column col-3" style="width: 18rem background-color:#aaa;">
-      <h2>VS</h2>
-    
-    </div>
-    <div class="column" style="">
-    <h2>FANTASY TEAM 2</h2>
-<button id="generate" class="btn">Vote for this Team</button>
-    {{#each top2Res as |player|}}
-
-    <div class="card" style="width: 18rem;">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> {{@index}}.{{player.track}}</li>
-        <li class="list-group-item">by: {{player.artist}}</li>
-      </ul>
-    </div>
-    {{/each}}
-    </div>
+  </div>
 </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
