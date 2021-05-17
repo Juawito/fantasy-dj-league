@@ -87,3 +87,12 @@
    justify-content: center;
    height: 50vh;
  }
+ .playlistContainer {
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   width: 100vh;
+   height: 80vh;
+   overflow: hidden;
+
+ }

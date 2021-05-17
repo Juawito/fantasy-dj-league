@@ -1,7 +1,8 @@
 const signUpNav = document.querySelector("#signUpNav");
 const signInNav = document.querySelector("#signInNav");
 
-function signUpNavF() {
+function signUpNavF(event) {
+    event.stopPropagation();
     document.location.replace('/signup');
 }
 function signInNavF(event) {
