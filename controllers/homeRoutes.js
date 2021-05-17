@@ -3,14 +3,6 @@ const { User, Playlist, Player } = require('../models');
 const withAuth = require('../utils/withAuth')
 const sequelize = require('../config/connection');
 const mysql = require('mysql');
-// const connection = mysql.createConnection({
-//     host: 'localhost',
-//     port: 3306,
-//     user: 'root',
-//     password: 'blackmag3',
-//     database: 'fantasy_dj_db',
-//   });
-
 router.get('/', async (req, res) => {
     selectPlaylist()
     async function selectPlaylist() {     
@@ -38,7 +30,7 @@ router.get('/', async (req, res) => {
         // console.log(top2PlaylistName)
 
 
-        res.render('all', { top1Res, top2Res, top1PlaylistName, top2PlaylistName });
+        res.render('landing', { top1Res, top2Res, top1PlaylistName, top2PlaylistName });
       };   
     // try {
     //     const topPlaylist = await Playlist.findAll({
@@ -57,20 +49,22 @@ router.get('/', async (req, res) => {
     // }
 })
 router.get('/login', async (req, res) => {
-    if (req.session.logged_in) {
-        console.log(req.session.logged_in)
-        res.redirect('/profile')
-    };
-    res.render('login');
-    return
+    try {
+        if (req.session.logged_in) {
+            console.log(req.session.logged_in)
+            res.redirect('/profile')
+        }
+        res.render('login'); 
+    } catch (error) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        })
+    }
 })
 router.get('/signup', async (req, res) => {
     res.render('signup');
 })
 router.get('/profile', withAuth, async (req, res) => {
-    console.log("profile get!!!!!")
-
-
     // let [userList, top1ResMetadata] = await sequelize.query(`SELECT id, artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${playlist_id}";`);
     let [userList, top1ResMetadata] = await sequelize.query("SELECT artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = 2;");
     console.log(userList)

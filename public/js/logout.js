@@ -14,3 +14,4 @@ const logOffNavF = async () => {
     console.log("off click");
 }
 logOffNav.addEventListener("click", logOffNavF);
+logOffNavf();

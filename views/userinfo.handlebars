@@ -1,44 +1,8 @@
-
-
-<body>
-
-
-  <!-- <form action="action_page.php" style="border:1px solid #ccc">
-        <div class="container">
-            <h1>DJ Onesheet</h1>
-            <p>Fill in this form to let us know about yourself & your DJ style!</p>
-            
-            <div>
-                <label for="img">Select image:</label>
-                <input type="file" id="img" name="img" accept="image/*">
-                <input type="submit">
-            </div>
-
-            <div>
-            <label for="bio"><b>BIO:</b></label>
-            <textarea id="bio" name="bio" rows="4" cols="50">
-                Tell us where you're from, why you love music, etc...
-                </textarea>
-            </div>
-            <div>
-                <label for="genre"><b>Favorite Genre(s):</b></label>
-                <textarea id="genre" name="genre" rows="2" cols="50">
-                Tell us about one or two of your favorite genres of music to spin...
-                </textarea>
-            </div>
-
-            <div>
-                <label for="Artist"><b>Favorite Artist:</b></label>
-                <input type="artist" placeholder= "" name="psw-repeat" required>
-            </div>
-            <p> Now, choose your playlist of 11 songs:</p>
-        </div>
-    </form> -->
-    <div class="user-content">
-  <aside class= " top-playlist-container">
+<div class="user-content">
+  <aside class="top-playlist-container teal lighten-5">
     <div class="card-container user-info">
       <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
+        <div class="card-image waves-effect teal lighten-5">
           <img class="activator " src="https://i.pravatar.cc/400">
         </div>
         <div class="card-content">
@@ -46,15 +10,30 @@
               class="material-icons right">Open</i></span>
           <p>Playlist Name <i>&#x1F3C6</i> </p>
           <p> Count: 120</p>
-          
+
 
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">John's playlist<i class="material-icons right">&#127926
+           <span class="card-title grey-text text-darken-4">John's playlist<i class="material-icons right">&#127926
               close</i></span>
+          {{#each userList as |player|}}
 
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> {{@index}}.{{player.track}}</li>
+            <li class="list-group-item">By: {{player.artist}}</li>
+          </ul>
         </div>
-        {{#each userList as |player|}}
+        {{/each}}
+        </div>
+      </div>
+    </div>
+  </aside>
+    <div class="row">
+    <div class="column" style="widthbackground-color:#aaa;">
+      <h4>FANTASY TEAM 1</h4>
+      <button id="like" class="btn">Vote for this Team</button>
+      {{#each top1Res as |player|}}
 
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
@@ -63,18 +42,24 @@
         </ul>
       </div>
       {{/each}}
-      </div>
     </div>
-  </aside>
+    <div class="column col-3" style="width: 18rem background-color:#aaa;">
+      <h2>VS</h2>
+    
+    </div>
+    <div class="column" style="">
+    <h2>FANTASY TEAM 2</h2>
+<button id="generate" class="btn">Vote for this Team</button>
+    {{#each top2Res as |player|}}
+
+    <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> {{@index}}.{{player.track}}</li>
+        <li class="list-group-item">by: {{player.artist}}</li>
+      </ul>
+    </div>
+    {{/each}}
+    </div>
 </div>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-</body>
-
-<footer>
-  <!-- <div class="clearfix">
-        <button type="submit" class="nextBtn">Submit Onesheet</button>
-    </div> -->
-</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

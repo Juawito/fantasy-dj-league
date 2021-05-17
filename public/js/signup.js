@@ -1,31 +1,35 @@
-const cancelBtn = document.querySelector('.cancelbtn');
-const signUpBtn = document.querySelector('.signupbtn');
+
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
-    const newUsername = document.querySelector('#new-username').value.trim();
-    const newUserEmail = document.querySelector('#new-userEmail').value.trim();
-    const newUserPassword = document.querySelector('#new-userPass').value.trim();
+    event.stopPropagation();
+    const firstName = document.querySelector('#firstName').value.trim();
+    const lastName = document.querySelector('#lastName').value.trim();
+    const userName = document.querySelector('#new-username').value.trim();
+    const email = document.querySelector('#new-userEmail').value.trim();
+    const password = document.querySelector('#new-userPass').value.trim();
     const repeatedPassword = document.querySelector('#password-repeat').value.trim();
 
-    if(!newUserPassword === repeatedPassword) {
+    if (!password === repeatedPassword) {
         alert('Passwords do not match please try again');
         newUserPassword = '';
         newUserEmail = '';
         newUsername = '';
         repeatedPassword = '';
-    } else if ( newUsername && newUserEmail && newUserPassword) {
-        const response = await fetch({
-            method: 'post',
-            url: '/api/user/add',
-            body: JSON.stringify({ newUsername, newUserPassword, newUserEmail }),
+    } else if (firstName && lastName && userName && email && password) {
+        const response = await fetch('/api/user/add', {
+            method: 'POST',
+            body: JSON.stringify({ userName, email, password, firstName, lastName }),
             headers: { 'Content-Type': 'application/json' },
         });
-         if (response.statusText === 'ok') {
-             document.location.replace('/profile');
-         } else {
-             alert(response.statusText);
-         }
+        if (response.ok) {
+            document.location.replace('/profile');
+            alert('Succesfully created account')
+        } else {
+            alert(response.statusText);
+        }
     }
 }
-signUpBtn.addEventListener('submit', signupFormHandler);
+
+}
+document.querySelector('#signUp-form').addEventListener('submit', signupFormHandler);
