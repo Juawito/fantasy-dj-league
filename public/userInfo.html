@@ -9,7 +9,7 @@
 </head>
 <div class="container">
     <div class="jumbotron">
-        <h1>Welcome, "DJ Name Here", to the Fantasy DJ Leage!</h1>
+        <h1>Welcome, "DJ Name Here", to the Fantasy DJ League!</h1>
         <p>You're almost ready to rock the crowd. </p>
     </div>
 </div>
@@ -20,7 +20,7 @@
         <div class="container">
             <h1>DJ Onesheet</h1>
             <p>Fill in this form to let us know about yourself & your DJ style!</p>
-            
+
             <div>
                 <label for="img">Select image:</label>
                 <input type="file" id="img" name="img" accept="image/*">
@@ -28,23 +28,22 @@
             </div>
 
             <div>
-            <label for="bio"><b>BIO:</b></label>
-            <textarea id="bio" name="bio" rows="4" cols="50">
-                Tell us where you're from, why you love music, etc...
-                </textarea>
+                <label for="bio"><b>Bio:</b></label>
+                <textarea id="bio" name="bio" rows="4" cols="50">Tell us where you're from, why you love music, etc...</textarea>
             </div>
             <div>
                 <label for="genre"><b>Favorite Genre(s):</b></label>
-                <textarea id="genre" name="genre" rows="2" cols="50">
-                Tell us about one or two of your favorite genres of music to spin...
-                </textarea>
+                <textarea id="genre" name="genre" rows="2" cols="50">Tell us about one or two of your favorite genres of music to spin...</textarea>
             </div>
 
             <div>
                 <label for="Artist"><b>Favorite Artist:</b></label>
-                <input type="artist" placeholder= "" name="psw-repeat" required>
+                <input type="artist" placeholder="" name="psw-repeat" required>
             </div>
             <p> Now, choose your playlist of 11 songs:</p>
+            <label for="Artist"><b>Search Songs:</b></label>
+            <input type="songDB" id="songs" onkeyup="songSearch()" placeholder="Search for songs..">
+
         </div>
     </form>
 
@@ -55,4 +54,5 @@
         <button type="submit" class="nextBtn">Submit Onesheet</button>
     </div>
 </footer>
+
 </html>
