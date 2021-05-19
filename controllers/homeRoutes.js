@@ -14,25 +14,21 @@ router.get('/', async (req, res) => {
 })
 router.get('/login', async (req, res) => {
     try {
-        // req.session.destroy(() => {
-        //     res.status(204).end();
-        // })
         if (req.session.logged_in) {
-            console.log(req.session.logged_in)
+            console.log('redirecting to profile');
             res.redirect('/profile')
+        } else {
+            console.log('redirecting to login')
+            res.render('login').status(200);
         }
-        res.render('login').status(200);
     } catch (error) {
         req.session.destroy(() => {
-            res.status(204).end();
         })
+        console.log(error);
     }
 })
 router.get('/signup', async (req, res) => {
     try {
-        if (req.session.logged_in) {
-            res.redirect('/profile')
-        }
         res.render('signup');
         res.status(200)
     } catch (error) {
