@@ -56,19 +56,19 @@ router.get('/profile', withAuth, async (req, res) => {
             let top2Playlist = results2[1].id;
             // console.log(top1Playlist, top2Playlist)
             // these sql searches pull up each player in playlists
-            let [top1Res, top1ResMetadata] = await sequelize.query(`SELECT id, artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${top1Playlist}";`);
+            let [top1Res, top1ResMetadata] = await sequelize.query(`SELECT id, artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlistId = "${top1Playlist}";`);
             console.log(top1Res)
             // console.log(top1PlaylistName)
 
 
 
-            let [top2Res, top2ResMetadata] = await sequelize.query(`SELECT artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${top2Playlist}";`);
+            let [top2Res, top2ResMetadata] = await sequelize.query(`SELECT artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlistId = "${top2Playlist}";`);
             console.log(top2Res)
             // console.log(top2PlaylistName)
 
             // console.log(userList)
             // // connection.end
-            res.render('userinfo', { userList, top1Res, top2Res, top1PlaylistName, top2PlaylistName, logged_in: true });
+            res.render('userinfo', { userList, top1Res, top2Res, top1PlaylistName, top2PlaylistName });
 
     } catch (error) {
         if (error) throw error;
