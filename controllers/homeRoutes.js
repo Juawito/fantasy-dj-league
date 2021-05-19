@@ -23,7 +23,7 @@ router.get('/login', async (req, res) => {
             res.render('login');
         } else {
             console.log('redirecting to login')
-            res.render('login').status(200);
+            res.render('login')
         }
     } catch (error) {
         if (error) throw error;
