@@ -41,8 +41,6 @@ router.get('/signup', async (req, res) => {
 })
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        selectPlaylist();
-        async function selectPlaylist() {
             let [user, top1Metadata] = await sequelize.query(`SELECT id, artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = "${req.session.user_id}";`);
             let [userList, top1RMetadata] = await sequelize.query("SELECT artist, track, playlist_id FROM fantasy_dj_db.player WHERE playlist_id = 2;");
             let [results2, metadata2] = await sequelize.query(`SELECT playlist_name, count, id FROM fantasy_dj_db.playlist ORDER BY count DESC LIMIT 2`);
@@ -72,7 +70,6 @@ router.get('/profile', withAuth, async (req, res) => {
             // // connection.end
             res.render('userinfo', { userList, top1Res, top2Res, top1PlaylistName, top2PlaylistName, logged_in: true });
 
-        }
     } catch (error) {
         if (error) throw error;
         res.status(404).json(error);
