@@ -9,5 +9,6 @@ function signInNavF(event) {
 event.stopPropagation();
 document.location.replace('/login');
 }
+
 signUpNav.addEventListener("click", signUpNavF);
 signInNav.addEventListener("click", signInNavF);
