@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {Playlist, User} = require('../../models');
+const withAuth = require('../../utils/withAuth');
 
 router.post('/add', async (req, res) => {
     try {
@@ -41,11 +42,12 @@ router.post('/login', async (req, res) => {
     }
 })
 
-router.post('/logout', (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
     if( req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
         })
+        res.redirect('/');
     } else {
         res.status(404).end()
     }
