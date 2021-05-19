@@ -15,15 +15,18 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
     try {
         if (req.session.logged_in) {
-            console.log('redirecting to profile');
-            res.redirect('/profile')
+            // console.log('redirecting to profile');
+            // res.redirect('/profile')
+            req.session.destroy(() => {
+            })
+            console.log('terminated old session ')
+            res.render('login');
         } else {
             console.log('redirecting to login')
             res.render('login').status(200);
         }
     } catch (error) {
-        req.session.destroy(() => {
-        })
+        if(error) throw error;
         console.log(error);
     }
 })
